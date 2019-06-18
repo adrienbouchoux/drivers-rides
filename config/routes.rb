@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root to: proc { Driver.count; [200, {}, ['API is up and running.']] }
+
+  # Use standard Rails routing syntax below
 end
