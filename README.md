@@ -26,3 +26,26 @@ URLs should look like `/drivers` for collection routes and `/drivers/123` for me
 ### 2. Add uniqueness check
 
 We want to make sure that there is one driver per phone number. What changes would you make to handle this uniqueness constraint?
+
+# Part 2
+
+### 1. Add availability helper methods on Driver
+
+Drivers can be affected to a ride using the `driver_id` foreign key in `rides`.
+
+A driver is said to be "unavailable" at a specific time `time` when it has a ride at time `time`
+(`time` is between `ride.pick_up_datetime` and `ride.drop_off_datetime`).
+
+Add the methods `Driver#available?` (for `time = Time.now`) and `Driver#available_at?(time)` for a custom `time`,
+returning whether the driver is available.
+
+### 2. Find available drivers
+
+Write the necessary code so that `Driver.available_at(time)` returns a collection of the drivers
+available at `time`.
+
+### 3. Simple dispatcher (ignore approach time and distances)
+
+1. Add a method `Ride#dispatch`, that gets an available driver for the ride, and sets the driver of the ride.
+
+2. Make the necessary changes so that the dispatch is done automatically during the creation of the ride.
