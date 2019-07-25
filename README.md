@@ -17,11 +17,11 @@ URLs should look like `/drivers` for collection routes and `/drivers/123` for me
 
 | Action | Request body | Response body | Status code |
 |---|---|---|---|
-| Create | JSON object with attributes `first_name`, `last_name`, `phone_number` |  - | `201 Created` |
-| Show | - | JSON object with attributes `id`, `first_name`, `last_name`, `phone_number`|  `200 OK` |
-| Edit | JSON object with any of `first_name`, `last_name`, `phone_number` | Same as in "show" | `200 OK` |
-| Delete | Fragment of JSON  | - | `204 No content`  |
-| List | - | Array of drivers as JSON (as described in "show") | `200 OK` |
+| Create | JSON object with attributes `first_name`, `last_name`, `phone_number` | JSON object with attributes `id`, `first_name`, `last_name`, `phone_number` | `201 Created` |
+| Show | - | Same as Create |  `200 OK` |
+| Edit | JSON object with any of `first_name`, `last_name`, `phone_number` | Same as Create | `200 OK` |
+| Delete | - | - | `204 No content`  |
+| List | - | Array of drivers as JSON (as described in Create) | `200 OK` |
 
 ### 2. Add uniqueness check
 
