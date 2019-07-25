@@ -31,7 +31,7 @@ We want to make sure that there is one driver per phone number. What changes wou
 
 ### 1. Add availability helper methods on Driver
 
-Drivers can be affected to a ride using the `driver_id` foreign key in `rides`.
+Drivers can be assigned to a ride using the `driver_id` foreign key in `rides`.
 
 A driver is said to be "unavailable" at a specific time `time` when it has a ride at time `time`
 (`time` is between `ride.pick_up_datetime` and `ride.drop_off_datetime`).
